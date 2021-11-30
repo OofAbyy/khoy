@@ -382,8 +382,8 @@ a {
     display:flex;
     position:fixed;
     width:350px;
-    bottom: 40% !important;
-    left: -6%;
+    bottom: 31.5em !important;
+    left: -8.5em;
     height:40px;
     z-index:-1;
     outline:3px solid var(--accent);
@@ -419,7 +419,7 @@ a {
 }
 
 #healthValue:before {
-    content:'+';
+    content:'';
 }
 
 #bottomLeftHolder:before {
@@ -435,9 +435,9 @@ a {
     display: flex !important;
     flex-direction: column;
     left: 3% ;
-    bottom: 27% !important;
+    bottom: 22em !important;
     position: fixed !important;
-    gap: 3em  !important;
+    gap: 2.5em  !important;
 }
 
 #killsVal,#deathsVal,#streakVal,#myScoreVal,#kdVal {
@@ -445,7 +445,7 @@ a {
     font-size:30px;
     display: block;
     text-align: right;
-    padding: 15px 0em;
+    padding: 0.5em 0em;
 }
 
 #killsIcon, #deathsIcon, #streakIcon {
@@ -454,7 +454,7 @@ a {
     flex-direction: comlumn;
     position: fixed;
     transform: scale(1.5);
-    padding-top: 15px;
+    padding-top: 1em;
 }
 /*Bottom right*/
 #weapDisplay {
