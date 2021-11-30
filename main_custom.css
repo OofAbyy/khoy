@@ -1,1 +1,7 @@
 @import url(https://oofabyy.github.io/khoy/kh0y.css);
+
+:root {
+    --accent: #5c5c5c;
+    --ingame-bg: #fff;
+    --text-color: #353535;
+}
