@@ -435,9 +435,9 @@ a {
     display: flex !important;
     flex-direction: column;
     left: 3% ;
-    bottom: 22em !important;
+    bottom: 25em !important;
     position: fixed !important;
-    gap: 2.5em  !important;
+    gap-column: 2.5em  !important;
 }
 
 #killsVal,#deathsVal,#streakVal,#myScoreVal,#kdVal {
