@@ -1,13 +1,13 @@
 :root {
-    --accent: #5c5c5c;
-    --ingame-bg: #fff;
+    --accent: #fff200;
+    --ingame-bg: #000;
     --text-color: #353535;
 }
 
 /*Font*/
 @font-face {
    font-family: gamefont;
-   src: url(https://fonts.gstatic.com/s/sourcecodepro/v14/HI_SiYsKILxRpg3hIP6sJ7fM7PqlPevW.woff2);
+   src: url(https://fonts.gstatic.com/s/sourcecodepro/v18/HI_jiYsKILxRpg3hIP6sJ7fM7PqlOPHYvDP_W9O7GQTTxYpbTl0Y.woff2);
 }
 
 @font-face {
@@ -28,7 +28,6 @@ a {
   color: #fff !important;
 }
 /*Loading Screen*/
-/*Loading Screen*/
 #initLoader {
   background: url(https://media.discordapp.net/attachments/885337150500012072/915189621544067082/2593697.jpg?width=1191&height=670) no-repeat !important;
   background-size: cover !important;
@@ -42,7 +41,7 @@ a {
   font-size: 0;
   background-color: rgba(225, 225, 225, 0.2);
   padding: 4px 8px;
-  box-shadow: 4px 4px var(--accent);
+  box-shadow: 4px 4px #5c5c5c;
 }
 
 #loadInfoRHolder::after {
@@ -68,11 +67,14 @@ a {
 }
 /*Sublogo*/
 #subLogoButtons {
-    border-bottom:4px solid white;
+    border-bottom:4px solid black;
     bottom: unset;
     bottom: 10%;
     background-color: transparent;
     padding: 20px 80px;
+}
+#subLogoButtons>.button {
+    color: var(--accent) !important;
 }
 #rankedSoonTm {
     visibility: hidden;
@@ -80,12 +82,11 @@ a {
 
 .button {
     color: white !important;
-    background-color:transparent;
-    border:none !important;
+    background-color: rgba(225,225,225,.6);
+    border:4px solid black !important;
 }
 
 .button:hover,.button:active {
-    border:none !important;
     transform:none;
     color: var(--accent) !important;
 }
@@ -98,16 +99,21 @@ a {
     font-size:22px;
     content:'Ranked';
 }
+#pingDisplay, #fpsDisplay, #ingressDisplay, #egressDisplay, #pingIcon {
+    color: black !important;
+}
+#ingameFPS, #pingText, #ingressPacketCount, #ingressDataSize, #egressPacketCount, #egressDataSize {
+    color: var(--accent) !important;
+}
 /*useless*/
 #streamContainer,.youNewDiv,#seasonLabel,#onetrust-consent-sdk,#aHider,.headerBarRight,#newsHolder,.verticalSeparatorInline,.button .material-icons,#faceItIconM,.weapKey,#ammoMax,#ammoIcon,#timerIcon,#curGameInfo div,#challIcon,#maxHP,#braveWarning,#voiceDisplay,.terms:first-child,.terms:nth-child(3),.terms:nth-child(5),#loadEditrBtn,#endAContainer,#menuClassSubtext,#bubbleContainer,.rankClck,.setSugBox,::-webkit-scrollbar,.verticalSeparator,.progressBar,.krSocial,.hostMapBy,.hostMapYear,.hostMapVersion,.serverPing,.classXPBar {
     display:none !important;
 }
 #mainLogo {
-    filter: grayscale(100%);
-    content: url(https://cdn.discordapp.com/attachments/885337150500012072/915212025993502750/navitop1s_Krunker_Logo.png) !important;
-    width: 60%;
+    content: url(https://media.discordapp.net/attachments/885337150500012072/924613203760136222/Team_icon_Natus_Vincere.png) !important;
+    width: 70%;
     height: auto;
-    margin-top: -20px !important;
+    margin-top: 4em !important;
 }
 #pingIcon {
     transform: scale(.5);
@@ -164,8 +170,8 @@ a {
 #policeButton {
     border:none !important;
     image-rendering:pixelated;
-    background-color:transparent;
-    drop-filter: blur(8px);;
+    background-color: #000 !important;
+    filter: sepia() saturate(10000%) hue-rotate(0deg);
     position:fixed;
     right:40px;
     bottom:31.5%;
@@ -174,64 +180,188 @@ a {
     padding: 0 !important;
 }
 /*Menu Items*/
+/*Menu*/
 #menuItemContainer {
-    width: fit-content;
-    height: min-content;
-    top: unset;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    background: transparent !important;
+    width:fit-content;
+    height:max-content;
+    background-color: rgba(225,225,225,.6) !important;
+    top:30%;
+    left:-5%;
+    transform: rotateZ(-3deg);
+    flex-direction:column;
+    filter:drop-shadow(10px 10px var(--accent));
+    position: absolute !important;
+   
 }
 
 .menuItem {
-    align-items: center;
-    background: transparent;
-    padding-bottom: 5px;
-    padding-left: 22px;
-    padding-right: 22px;
-    pointer-events: none;
-}
-
-.menuItem:hover {
-    background: transparent;
-    color: white;
-    border-left: none;
-}
-
-.menuItem:active {
-    background: transparent;
-    color: white;
+    padding-left:40px;
+    padding-right:30px;
+    background:var(--ingame-bg);
+    margin-top:-32px;
+    margin-bottom:50px;
+    height:60px !important;
+    text-align:left !important;
+    align-items:left !important;
+    -webkit-transform:translateX(-10px);
+    transform:translateX(-3px) translateY(13px);
+    clip-path:polygon(0 0, 100% 0, 91% 100%, 91%% 100%);
+    transition-duration:0.5s;
+    justify-content: space-between;
+    position: relative !important;
 }
 
 .menuItem .menuItemTitle {
-    margin-top: 0;
-    color: white !important;
-    font-size: 22px !important;
-    text-transform: none;
-    pointer-events: all;
-    transition: all .2s;
-    font-weight: bold !important;
+    color:var(--accent) !important;
+    transform:translateY(2px) !important;
+    font-size:28px !important;
+    text-align:left !important;
+    margin-top:15px;
+    margin-left: -40px !important;
+    height:60px !important;
+    width:200px;
+    font-weight: 12px;
+}
+.junkInfo {
+   visibility: hidden;
+}
+#menuBtnChall {
+    margin-right:20px;
 }
 
-.menuItemTitle:hover {
-    color: var(--accent) !important;
+#menuBtnProfile.menuItemTitle {
+    color: #0000 !important;
 }
 
-.menuItem .menuItemIcon {
-    display: none !important;
-}
-.material-icons-outlined {
-    display: none !important;
+
+#menuBtnShop {
+    color:transparent !important;
 }
 
+
+
+#menuBtnChall {
+    color:transparent !important;
+}
+
+
+#menuBtnSocial {
+    color:transparent !important;
+}
+
+
+#menuBtnMaps {
+    color:transparent !important;
+}
+
+
+#menuBtnMods {
+    color:transparent !important;
+}
+
+#menuBtnSettings {
+    color:transparent !important;
+}
+
+
+#menuBtnExit {
+    color:transparent !important;
+}
+.menuItem:hover {
+    border:hidden;
+    transform:translateX(120px);
+    transition-duration:0.5s;
+}
+
+.menuItem:hover .menBtnIcn {
+    transform:none;
+}
+/*fuck tracers and stealers,I'll kill u bich*/
+
+.menBtnIcn {
+    visibility:hidden;
+    left:108px !important;
+    margin-top:-6px !important;
+    position:absolute
+}
+
+.menBtnIcn[style="color:#FF6A0B"]:after {
+    font-family: 'Material-Icons';
+    content: 'manage_accounts';
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#ff8e0b"]:after {
+    font-family: 'Material Icons Outlined';
+    content: 'storefront';
+    font-weight:lighter;
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#ffbb0b"]:after {
+    font-family: 'Material Icons Outlined';
+    content:'tour';
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#fff"]:after {
+    font-family: 'Material Icons Outlined';
+    content:'travel_explore';
+    font-weight:lighter;
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#fb5555"]:after {
+    font-family:'Material Icons';
+    content:'games';
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#d747f5"]:after {
+    font-family:'Material-Icons';
+    content:'settings_suggest';
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
+
+.menBtnIcn[style="color:#f5479b"]:after {
+    font-family:'Material Icons';
+    content:'folder_special';
+    visibility:visible;
+    font-size:45px !important;
+    color:var(--accent) !important;
+}
 /*Chat*/
+#chatInputHolder, #chatList {
+    background-color: transparent !important;
+}
+.chatItem {
+    background-color: black !important;
+    color: var(--accent);
+    font-size: 20px;
+    border-radius: 0px;
+    padding: 8px 16px;
+    margin-left: 0;
+    margin-right: 6px;
+    max-width: 280px;
+    box-shadow: 6px 6px var(--accent);
+}
 #chatDisplay {
     height: 20px !important;
 }
 #chatInput {
-    background-color: var(--ingame-bg-color) !important;
+    background-color: black !important;
     color: white !important;
     font-size: 13px;
     border-top-left-radius: 0 !important;
@@ -254,7 +384,7 @@ a {
 
 .chatItem {
     border-radius: 0;
-    background-color: transparent !important;
+    background-color: black !important;
 }
 
 .chatMsg[style*="color:#fc03ec"] {
@@ -268,94 +398,10 @@ a {
     background-color: transparent;
 }
 /*Top Left*/
-#menuMiniProfilePic {
-    display: none;
+#signedInHeaderBar {
+    display: none !important;
 }
 
-#mailContainer {
-    transform:translateX(10px);
-}
-
-#menuKRCount {
-    transform:translateY(-10px) translateX(-170px);
-    font-size:20px;
-    color: #fff;
-    width: 120px !important;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    margin-right: 10px;    
-}
-#menuKRCount span {
-    color: yellow !important;
-}
-
-#menuKRCount:after {
-    content: none;
-}
-
-#mLevelCont {
-    transform:translateX(-140%);
-    background-color: var(--accent);
-    transform: none;
-    top: -12px;
-}
-
-#mLevelContV {
-    font-size:20px;
-}
-
-#mLevelContV {
-    color:white !important;
-}
-#mailContainer {
-    transform: translateY(-10px);
-}
-#mailIcon {
-    color: white;
-}
-#mailIcon:hover {
-    opacity:1;
-    transform:scale(1.1);
-}
-
-#mLevelContV:before {
-    content:'LVL ';
-}
-
-#menuAccountUsername {
-    color: white;
-    font-size:20px;
-    position:relative;
-    top:30px;
-    left:14px;
-    font-weight: bold;
-}
-
-#menuAccountUsername:before {
-    content:"";
-    position:fixed;
-    left:12px;
-    top:45px;
-    display:inline-block;
-    width: 390px;
-    height:25px;
-    background-color:var(--accent);
-    z-index:-2;
-    clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-}
-.readAll {
-    background-color: transparent;
-    color: var(--text-color);
-}
-
-.readAll:hover {
-    background-color: transparent;
-    color: var(--accent);
-}
-.junkInfo {
-    margin-top: -40px !important;
-}
 /*Top Left MENU*/
 .leftUIB {
     background-color: transparent;
@@ -386,7 +432,7 @@ a {
     left: -8.5em;
     height:40px;
     z-index:-1;
-    outline:3px solid var(--accent);
+    outline:4px solid black;
     transform: rotateZ(270deg);
 }
 
@@ -398,7 +444,7 @@ a {
 .hpBSeg {
     border-radius:0;
     box-shadow:none;
-    background-color: white !important;
+    background-color: var(--accent) !important;
 }
 
 #healthValueHolder {
@@ -525,11 +571,12 @@ a {
 }
 /*Top Right*/
 #leaderDisplay {
-    background-color:var(--accent);
+    background-color: black;
     border-radius: 0;
     box-shadow: none;
     padding-top: 32px;
     margin-right: 12px;
+    filter: drop-shadow(6px 6px 0 yellow);
 }
 #leaderDisplay::before {
     content: "LEADER";
@@ -546,8 +593,12 @@ a {
     text-align:center;
 }
 /*End Card*/
+.xpEndBarB {
+    background-image: linear-gradient(to right,#000000,var(--accent)) !important;
+}
 .endCard {
-    backdrop-filter:blur(8px);
+    background-color: black;
+    filter: drop-shadow(8px 8px 0 yellow);
 }
 
 #tabHolder,#matchVoteHolder,#endTable {
@@ -569,7 +620,7 @@ a {
 }
 /*Button*/
 .button {
-    background-color: transparent !important;
+    background-color: rgba(225,225,225,.6) !important;
     color: white !important;
     text-shadow: none !important;
     box-shadow: none !important;
@@ -693,7 +744,7 @@ input:focus+.slider2 {
 }
 
 .sliderSml:before {
-	background-color: var(--accent);
+	background-color: #5c5c5c;
 	border-radius: 0;
 }
 
@@ -817,9 +868,19 @@ input:checked+.sliderSml:before {
 
 #menuWindow {
     max-height: calc(100% - 300px) !important;
-    background-color: transparent;
+    background-color: black !important;
     box-shadow: none;
     border-radius: 20px;
+    filter: drop-shadow(6px 6px 0 yellow);
+}
+input {
+    color: black !important;
+}
+#windowHeader {
+    display: block !important;
+}
+.settingsHeader {
+    background: black;
 }
 
 .menuTabsNew {
@@ -1058,7 +1119,9 @@ input:checked+.sliderSml:before {
 }
 /*HUB*/
 #backgroundImage { 
-    background-image: url(https://cdn.discordapp.com/attachments/885337150500012072/915238416889819176/3345.png) !important;
+    background-image: url(https://media.discordapp.net/attachments/885337150500012072/924626824724619294/1707628.png?width=1191&height=670) !important;
+    background-size: cover;
+    background-position: center !important;
 }
 #aContainer {
     display: none !important;
