@@ -432,8 +432,9 @@ a {
     left: -8.5em;
     height:40px;
     z-index:-1;
-    outline:4px solid black;
+    outline: none;
     transform: rotateZ(270deg);
+    filter: drop-shadow(6px 6px 0 yellow);
 }
 
 .healthBarSeg {
@@ -444,7 +445,7 @@ a {
 .hpBSeg {
     border-radius:0;
     box-shadow:none;
-    background-color: var(--accent) !important;
+    background-color: black !important;
 }
 
 #healthValueHolder {
@@ -1131,4 +1132,12 @@ input {
 }
 #invSortB, #hubBox {
     background-color: var(--accent) !important;
+}
+#instructionHolder,
+#fullMenHider{
+    display: none!important
+}
+
+#inGameUI{
+    display: block!important
 }
