@@ -1133,11 +1133,3 @@ input {
 #invSortB, #hubBox {
     background-color: var(--accent) !important;
 }
-#instructionHolder,
-#fullMenHider{
-    display: none!important
-}
-
-#inGameUI{
-    display: block!important
-}
